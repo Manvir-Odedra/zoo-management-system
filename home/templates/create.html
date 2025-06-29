@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Zootopia | Create</title>
+{% endblock  %}
+
+
+{% block body %}
+  <div class="container">
+    <h1>Add New Pet</h1>
+    <form action="/create" method="post">
+      {% csrf_token %}
+      <label>Title</label>
+      <input type="text" name="titleh" required>
+
+      <label>Description</label>
+      <textarea name="descriptionh" rows="4" required></textarea>
+
+      <label>Image URL</label>
+      <input type="url" name="imageh" placeholder="https://example.com/img.jpg">
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  
+{% endblock %}

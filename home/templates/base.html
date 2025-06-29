@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    {% block title %}
 
+    {% endblock %}
+    <link rel="stylesheet" href="static/style.css" />
+    <style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-top: 40px;
+      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+      border-top: 4px solid #fff;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    footer:hover {
+      background: linear-gradient(to right, #43cea2, #185a9d); /* New gradient on hover */
+      color: #fffae6;
+      transform: scale(1.02);
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h2 class="logo">Zootopia</h2>
+        <ul>
+          <li>
+            <a href="{% url 'homepage' %}">Home</a>
+          </li>
+          <li>
+            <a href="{% url 'createpage' %}">Create</a>
+          </li>
+          <li>
+            <a href="{% url 'displaypage' %}">Display</a>
+          </li>
+          {% if request.user.is_authenticated %}
+            <li>
+              <a href="{% url 'logoutpage' %}">Logout</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{% url 'loginpage' %}">Login</a>
+            </li>
+            <li>
+              <a href="{% url 'registerpage' %}">Register</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <footer>
+      <p>All rights reserved. Design By Manvir Odedra</p>
+    </footer>
+  </body>
+</html>

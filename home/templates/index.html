@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Zootopia | Home</title>
+{% endblock  %}
+
+
+{% block body %}
+
+  <section class="slider">
+    <div class="slides">
+      <!-- Slide Images -->
+      <input type="radio" name="radio-btn" id="radio1" checked>
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+
+      <div class="slide first">
+        <img src="https://img.freepik.com/free-vector/many-cute-animals-bamboo-forest_1308-32851.jpg?ga=GA1.1.325306582.1745209960&semt=ais_hybrid&w=740" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="https://media.istockphoto.com/id/482883519/photo/peacock.jpg?s=612x612&w=0&k=20&c=rYzbad4Xx-cCAwrn1g7OsWW5OAX1jTfTiDYqCUvYIBs=" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="https://img.freepik.com/free-photo/close-up-lioness-lying-ground_1217-1701.jpg?ga=GA1.1.325306582.1745209960&semt=ais_hybrid&w=740" alt="Slide 3">
+      </div>
+      
+    </div>
+
+  </section>
+
+  <section class="hero">
+    <h1>Welcome to My Zootopia site</h1>
+    <p>This is a simple Django CRUD Operation website frontend & Backend.</p>
+  </section>
+
+  <section class="gallery">
+    <h2>Pets Gallery</h2>
+    
+    <div class="gallery-grid">
+      {% for getpics in sendpics %}
+      <img src="{{getpics.imgurl}}" alt="Lion">
+      {% endfor %}
+    </div>
+    
+  </section>
+  
+
+{% endblock %}
+
