@@ -20,4 +20,7 @@ This is a Django-based web application for managing animals and birds in a zoo o
 4. Start the server and explore!
 
 ---
+![App Screenshot](assets/home-bg1.png)
+![User List](assets/gallery.png)
+
 
